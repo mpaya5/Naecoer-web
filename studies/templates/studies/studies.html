@@ -1,0 +1,72 @@
+{% extends 'core/layout.html' %}
+
+{% block body %}
+<section class="studies-head">
+    <div class="titulo">
+        <h2 style="text-transform: uppercase;">ESTUDIOS</h2>
+    </div>
+</section>
+
+
+<!--Empieza Casos de Estudio-->
+
+<section class="casos">
+    <div class="container" style="padding-top: 80px;">
+      <div class="row col-lg-12 estudios" style="margin-bottom: 25px;">
+        {% for studie in studies %}
+        <div class="row col-lg-10"  style=" padding-bottom: 30px;">
+          <div class="col-lg-6" style="margin: 0px; padding: 0px;">
+            {% load static %}
+            <video poster="{{studie.preview.url}}" height="100%" width="100%" controls>
+              <source src="{{studie.video.url}}" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-lg-6 bloque" style="margin: 0px auto;">
+            <p style="padding-bottom: 10px; color: #89d631;"><strong>{{studie.subtitle}}</strong></p>
+            <h6><strong>{{studie.title}}</strong></h6>
+            <div class="content">
+              {{studie.content|linebreaks}}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+  <!--Termina casos de estudio-->
+
+  <section class="news" style="background-image: none; padding-bottom: 100px;">
+    <div class="container">
+      <div class="row col-lg-12 subtitulo">
+        <div class="col-lg-10">
+          <h3>ÚLTIMAS <strong>ENTRADAS</strong></h3>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'posts' %}" class="btn">Ver todos</a>
+        </div>
+      </div>
+  
+      <div class="row col-lg-12">
+        {% load posts_extras %}
+        {% get_post_list as post_list %}
+        {% for post in post_list reversed %}
+        {% if post.id < 6 %}
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            {% load static %}
+            <img class="card-img-top" height="300px" width="auto" src="{{ post.image.url }}" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">{{post.title}}</h2>
+              <p class="card-text">{{post.content|safe|truncatechars:75}}</p>
+              <a href="{% url 'post' post.id %}" style="margin-top: 20px;" class="btn btn-primary">Leer más &rarr;</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

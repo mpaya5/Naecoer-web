@@ -1,0 +1,37 @@
+{% extends 'core/layout.html' %}
+
+{%block title%}{{post.title}}{%endblock%}
+
+{% block body %}
+
+<div class="blog" style="padding-bottom:50px ;">
+    <section class="post-head" style="background-image: url({{post.image.url}});">
+    </section>
+    <section class="blog-entero">
+        <div class="container">
+            <div class="text-center" style="padding: 80px 20px;">
+                <h2>{{post.title}}</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="contenido-post">
+            {{post.content|safe}}
+        </div>
+
+    </section>
+</div>
+
+<section class="btn-leer-mas" style="padding-bottom:100px ;">
+    <div class="container">
+        <div class="row col-lg-12">
+            <div class="col-lg-12">
+                <div class="col-lg-4">
+                    <a href="{% url 'posts' %}" class="btn">Leer más entradas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

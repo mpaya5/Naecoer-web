@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
+
+*
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif !important;
+    overflow: -moz-hidden-unscrollable;
+}
+html, body
+{
+    scroll-behavior: smooth;
+}
+
+p, ::content, h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Lato', sans-serif !important;
+}
+
+header
+{
+    position: fixed;
+    padding-bottom: 20px;
+    background-color: white;
+    width: 100%;
+    z-index: 1400;
+}
+
+header .menu-toggle
+{
+position: absolute;
+z-index: 999;
+    /* width: 40px;
+    height: 40px;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    line-height: 25px; */
+    font-size: 30px; 
+    top: 0;
+    left: 80%;
+    cursor: pointer;
+    color:#03a9f4;
+    padding: 1rem;
+}
+
+header .menu-toggle:before
+{
+    content: '\f0c9';
+    font-family: fontAwesome;
+    line-height: 25px;
+}
+
+header .menu-toggle.activado:before
+{
+    color: white;
+    content: '\f00d ';
+    z-index: 1500;
+}
+
+header nav
+{
+    background-color: #03a9f4;;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms ease;
+    transform-origin: top right;
+}
+
+header nav ul
+{
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    line-height: 5rem;
+    text-align: center;
+}
+
+header nav ul li:hover a
+{
+    color: white;
+    opacity: 1;
+    text-decoration: none;
+}
+
+
+header nav.activado
+{
+    display: flex;
+}
+
+header nav.activado ul
+{
+    display: block;
+
+}
+
+header nav.activado ul li
+{
+    display: block;
+    
+}
+
+header nav ul li
+{
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+header nav ul li a
+{
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    opacity: 0.8;
+    text-transform: uppercase;
+    padding: 1rem;
+
+}
+
+footer
+{
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #ccc;
+
+    padding: 25px;
+
+    color: #141313c3;
+}
+
+footer a
+{
+    text-decoration: none;
+}
+
+footer .link
+{
+    padding: 15px;
+}
+
+/*****HOME********/
+
+.height_vh
+{
+    height: 100vh;
+}
+
+.half_vh
+{
+    height: 50vh;
+}
+
+.elementor-inner
+{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#principal
+{
+    background-image: url(/static/core/img/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#principal .text
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25vh;
+    padding: 40px;
+}
+
+#principal .text h1
+{
+    color: white;
+    font-size: 5.5rem;
+    font-weight: 700;
+}
+
+#about
+{
+    background-image: url(/static/core/img/fondo-agua.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 80px 40px;
+}
+
+#about h2
+{
+    color: #141313c3;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+#about p
+{
+    padding: 0px 80px;
+}
+
+#about .botones .btn
+{
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: normal;
+    margin: 0;
+    margin-top: 10px;
+    padding: 17px 30px;
+    border-radius: 30px;
+    border-color: #03a9f4;
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+#infothree .col-lg-12
+{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+#infothree .row .col-lg-4
+{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    padding: 30px;
+}
+
+
+#infothree .row .col-lg-4 .col-lg-6
+{
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+#infothree .row .col-lg-4 p,
+#infothree .row .col-lg-4 h6
+{
+    margin: 0px;
+    padding: 0px;
+    padding: 10px;
+}
+
+#services
+{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#services .col-lg-12
+{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+#services .subtitulo
+{
+    padding: 50px 0px;
+    color: white;
+}
+
+#services .subtitulo .col-lg-2 .btn
+{
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: normal;
+    margin: 0;
+    padding: 17px 30px;
+    border-radius: 30px;
+    border-color: white;
+    text-decoration: none;
+    color: white;
+}
+
+#services .cuerpo .col-lg-3
+{
+    background-color: rgba(255,255,255,0.4);
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+#services .cuerpo .col-lg-3 h6
+{
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+#services .cuerpo .info-add
+{
+    padding-top: 30px;
+}
+
+#services .cuerpo .col-lg-3 .icono-central img
+{
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+}
+
+#services .oscureciendo
+{
+    padding-bottom: 120px;
+}
+
+/* #casos
+{
+     background-image: url(/static/core/img/fondo-casos.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+} */
+
+.casos .col-lg-12
+{
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.casos .subtitulo .col-lg-2 .btn
+{
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: normal;
+    margin: 0;
+    padding: 17px 30px;
+    border-radius: 30px;
+    border-color: #03a9f4;
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+.casos .subtitulo
+{
+    padding: 50px 0px;
+    color: #03a9f4;
+}
+
+.casos.estudios
+{
+    margin-bottom: 25px;
+}
+
+.casos .estudios .bloque
+{
+    color: white;
+    background-color: rgba(20, 39, 174, 1);
+    text-align: left;
+    padding: 18px;
+}
+
+.casos .estudios .bloque li
+{
+    margin-bottom: 0px;
+}
+
+.casos .estudios .bloque li
+{
+    list-style: none;
+}
+
+/*********Termina casos**********/
+
+/************NEWS***********/
+
+.news
+{
+    background-image: url(/static/core/img/fondo-news.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+}
+
+.news .subtitulo .col-lg-2 .btn
+{
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: normal;
+    margin: 0;
+    padding: 17px 30px;
+    border-radius: 30px;
+    border-color: #03a9f4;
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+.news .subtitulo
+{
+    padding: 50px 0px;
+    color: #03a9f4;
+}
+
+/*******Termina News**************/
+
+/*********Contact*************/
+
+.contact
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.contact h2
+{
+    color: #03a9f4;
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.contact h5
+{
+    color: #141313c3;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contact .info
+{
+    padding-bottom: 25px;
+}
+
+.contact  .row .col-lg-6
+{
+    text-align: center;
+}
+
+.contact form
+{
+    padding: 25px 100px;
+}
+
+.contact form .row .col-lg-6 label,
+.contact form .row .col-lg-6 input,
+.contact form .row .col-lg-12 label,
+.contact form .row .col-lg-12 input,
+.contact form .row .col-lg-12 textarea
+{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    margin: 0px;
+}
+
+
+.contact form .row .col-lg-12 input[type="submit"]
+{
+    color: white;
+    background-color: #03a9f4;
+    border-color: white;
+}
+
+.row
+{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+
+
+/**************PARA EL EFECTO***********/
+.activo
+{
+    background-color: rgba(20, 39, 174, 0.6) !important;
+}
+.default-img{background-image: url(/static/core/img/fondo-services.jpg);}
+.agri{background-image: url(/static/core/img/agriculture.jpg);}/*agricultura*/
+.acui{background-image: url(/static/core/img/fish.jpg);}/*acuicultura*/
+.water{background-image: url(/static/core/img/water.jpg);}/*aguas*/
+.algae{background-image: url(/static/core/img/alga.jpg);}/*algas*/
+.piscina{background-image: url(/static/core/img/pool.jpg);}/*pool*/
+.washer{background-image: url(/static/core/img/laundry.jpg);}/*laundry*/
+.hoyo{background-image: url(/static/core/img/golf.jpg);}/*golf*/
+.jardin{background-image: url(/static/core/img/garden.jpg);}/*garden*/
+.quimica{background-image: url(/static/core/img/quimica.jpg);}/*chemistry*/
+.gas{background-image: url(/static/core/img/gas.jpg);}/*oil*/
+.mineria{background-image: url(/static/core/img/mineria.jpg);}/*miner*/
+/* 
+#particles-js
+{
+    display:block;
+    background: rgba(8,175,253,1);
+    background: -moz-linear-gradient(top, rgba(8,175,253,1) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(8,175,253,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(8,175,253,1) 0%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(8,175,253,1) 0%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(8,175,253,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(8,175,253,1) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08affd', endColorstr='#ffffff', GradientType=0 );
+    width: 100%;
+    top: 0px;
+} */
+
+   /******************MEDIAS*******************/
+
+
+@media (max-width: 511px)
+{
+
+h2
+    {
+        font-size: 2.5rem !important;
+    }
+    #about img
+    {
+        width: 85% !important;
+    }
+
+    #about p
+    {
+        padding: 0px;
+    }
+
+    .contact form
+    {
+        padding: 0px;
+    }
+
+    header nav{
+        width: 50% !important;
+    }
+h3
+    {
+        font-size: 1.75rem !important;
+    }
+
+    #services .cuerpo .col-lg-3 .col-lg-10
+    {
+        width: 70%;
+    }
+
+    #services .cuerpo .col-lg-3 .col-lg-2
+    {
+        width: 10%;
+    }
+h1
+{
+    font-size: 3.5rem !important;
+}
+
+.news .card-title
+{
+    font-size: 2rem !important;
+}
+
+.news .card-text h3
+{
+    font-size: 1.5rem !important;
+}
+
+}
+
+

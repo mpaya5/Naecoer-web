@@ -1,0 +1,62 @@
+.services-head
+{
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    padding-top: 140px;
+}
+
+.services-head .titulo
+{
+    margin: 0px auto;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.services-head h2
+{
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+
+    padding: 40px 0px;
+    
+}
+
+.service-content
+{
+    padding: 80px 0px;
+}
+
+.boton-experto .btn
+{
+    display: block;
+    width: 30%;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: normal;
+    margin: 0px auto;
+    margin-top: 10px;
+    padding: 17px 30px;
+    border-radius: 30px;
+    border-color: #03a9f4;
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+@media(max-width:512px)
+{
+    .boton-experto .btn
+    {
+        width: 100%;
+    }
+}
+
+

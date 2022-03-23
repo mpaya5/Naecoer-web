@@ -1,0 +1,36 @@
+.studies-head
+{
+    background-image: url(/static/core/img/fondo-studies.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    padding-top: 140px;
+}
+
+.studies-head .titulo
+{
+    margin: 0px auto;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.studies-head h2
+{
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+
+    padding: 40px 0px;
+    
+}
+
+
+@media (max-width: 511px)
+{
+    .boton-experto btn
+    {
+        width: 100%;
+    }
+}

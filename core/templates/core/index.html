@@ -1,0 +1,302 @@
+{% extends 'core/layout.html' %}
+
+{%block title%}Inicio{%endblock%}
+
+{% block body %}
+
+<section id="principal">
+  <div class="container">
+    <div class="text">
+      <h1>Primera empresa europea de Nanoburbujas</h1>
+    </div>
+  </div>
+</section>
+<!--Termina principal-->
+
+<section id="about">
+  <h2>SOBRE NOSOTROS</h2>
+  {% load static %}
+  <img src="{% static 'core/img/nano-title.png' %}" width="50%" alt="">
+  <hr>
+  <p>
+    Las Nanoburbujas de Naecoer han demostrado que aportan una gran cantidad de
+    beneficios a varias industrias alrededor del mundo.
+    <br> Hoy en día, las empresas están optando por usar las nanoburbujas en sus operaciones,
+    no solo debido al ahorro económico que supone, si no porque deciden elegir un método ecológico
+    y más eficiente para el día a día.
+  </p>
+  <div class="botones row col-lg-12">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-2">
+      <a href="{% url 'studies' %}" class="btn">Conócenos</a>
+    </div>
+    <div class="col-lg-2">
+      {% load posts_extras %}
+      {% get_post_list as post_list %}
+      {% for post in post_list reversed %}
+      {% if post.id == 4 %}
+      <a href="{% url 'post' post.id %}" class="btn">Leer más</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="xol-lg-4"></div>
+  </div>
+</section>
+
+<!--Termina About-->
+<section id="infothree">
+  <div class="row col-lg-12">
+    <!--1 de 3-->
+    <div class="row col-lg-4" style="background-image: url(/static/core/img/bloque-1.png);">
+      <div class="col-lg-6">
+      </div>
+      <div class="col-lg-6">
+        <h6><strong>NUESTRA HISTORIA</strong></h6>
+        <p style="border-bottom: 1px solid white;">AMPLIANDO NUESTRAS FRONTERAS</p>
+        <p>Pioneros en Europa en la fabricación de equipos de Nanoburbujas</p>
+        <a href="#about">
+          {% load static %}
+          <img src="{% static 'core/img/flecha-correcta.png' %}" style="margin-left: 20px;" width="25px" alt="">
+        </a>
+      </div>
+    </div>
+    <!--2 de 3-->
+    <div class="row col-lg-4" style="background-image: url(/static/core/img/bloque-2.png);">
+      <div class="col-lg-6">
+      </div>
+      <div class="col-lg-6">
+        <h6><strong>NUESTROS TRABAJOS</strong></h6>
+        <p style="border-bottom: 1px solid white;">TRATO PERSONALIZADO</p>
+        <p>Fabricamos y desarrollamos nuestras máquinas de Nanoburbujas desde España </p>
+        <a href="#services">
+          {% load static %}
+          <img src="{% static 'core/img/flecha-correcta.png' %}" style="margin-left: 20px;" width="25px" alt="">
+        </a>
+      </div>
+    </div>
+    <!--3 de 3-->
+    <div class="row col-lg-4" style="background-image: url(/static/core/img/bloque-3.png);">
+      <div class="col-lg-6">
+      </div>
+      <div class="col-lg-6">
+        <h6><strong>NUESTROS ESTUDIOS</strong></h6>
+        <p style="border-bottom: 1px solid white;">USAMOS LO MEJOR</p>
+        <p>Toda nuestra tecnología está testada y aprobada por nuestros ingenieros</p>
+        <a href="{% url 'studies' %}">
+          {% load static %}
+          <img src="{% static 'core/img/flecha-correcta.png' %}" style="margin-left: 20px;" width="25px" alt="">
+        </a>
+      </div>
+    </div>
+    <!--FIN-->
+  </div>
+</section>
+<!--Termina infothree-->
+
+<!--Empieza Services-->
+
+<section id="services" class="default-img">
+  <div class="oscureciendo" style="background-color: rgba(0, 0, 0, 0.3);">
+    <div class="container">
+      <div class="row col-lg-12 subtitulo">
+        <div class="col-lg-10">
+          <h3>NUESTROS <strong>SERVICIOS</strong></h3>
+        </div>
+      </div>
+      <div class="row col-lg-12 cuerpo">
+        <!---->
+        {% load services_extras %}
+        {% get_service_list as service_list %}
+        {% for service in service_list reversed %}
+        <div class="col-lg-3 {{service.classAdded}}">
+          <h6 style="text-transform: uppercase;"><strong>{{service.title}}</strong></h6>
+          <div class="icono-central">
+            {% load static %}
+            <img src="{{service.icon.url}}" width="75px" alt="">
+          </div>
+          <div class="row col-lg-12 info-add">
+            <div class="col-lg-10">
+              <p>{{service.number}}</p>
+            </div>
+            <div class="col-lg-2">
+              <a href="{% url 'service' service.id %}">
+                {% load static %}
+                <img src="{% static 'core/img/flecha-correcta.png' %}" width="25px" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <!---->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{% load static %}
+<script src="{% static 'core/js/servicios.js' %}"></script>
+
+<!--Termina Services-->
+
+<!--Empieza Casos de Estudio-->
+
+<section class="casos">
+  <div class="container">
+    <div class="row col-lg-12 subtitulo">
+      <div class="col-lg-10">
+        <h3>CASOS <strong>ESTUDIADOS</strong></h3>
+      </div>
+      <div class="col-lg-2">
+        <a href="{% url 'studies' %}" class="btn">Ver todos</a>
+      </div>
+    </div>
+    <div class="row col-lg-12 estudios" style="margin-bottom: 25px;">
+      {% for studie in studies %}
+      {% if studie.id < 3 %}
+       <div class="row col-lg-10" style=" padding-bottom: 30px;">
+        <div class="col-lg-6" style="margin: 0px; padding: 0px;">
+          {% load static %}
+          <video poster="{{studie.preview.url}}" height="100%" width="100%" controls>
+            <source src="{{studie.video.url}}" type="video/mp4">
+          </video>
+        </div>
+        <div class="col-lg-6 bloque" style="margin: 0px auto;">
+          <p style="padding-bottom: 10px; color: #89d631;"><strong>{{studie.subtitle}}</strong></p>
+          <h6><strong>{{studie.title}}</strong></h6>
+          <div class="content">
+            {{studie.content|linebreaks}}
+          </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  </div>
+</section>
+
+<!--Termina casos de estudio-->
+
+<!--News-->
+
+<section class="news">
+  <div class="container">
+    <div class="row col-lg-12 subtitulo">
+      <div class="col-lg-10">
+        <h3>ÚLTIMAS <strong>ENTRADAS</strong></h3>
+      </div>
+      <div class="col-lg-2">
+        <a href="{% url 'posts' %}" class="btn">Ver todos</a>
+      </div>
+    </div>
+
+    <div class="row col-lg-12">
+      {% load posts_extras %}
+      {% get_post_list as post_list %}
+      {% for post in post_list reversed %}
+      {% if post.id < 6 %}
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          {% load static %}
+          <img class="card-img-top" height="300px" width="auto" src="{{ post.image.url }}" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">{{post.title}}</h2>
+            <p class="card-text">{{post.content|safe|truncatechars:75}}</p>
+            <a href="{% url 'post' post.id %}"  style="margin-top: 20px;"class="btn btn-primary">Leer más &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!--Termina news-->
+<style>
+  .grecaptcha-badge {
+    opacity: 0 !important;
+  }
+</style>
+
+<script>
+  /*global grecaptcha*/
+  grecaptcha.ready(function () {
+    grecaptcha.execute('AAAAAAAAAAAAAAAAAAAAAAAAAAAA', { action: "/contact/" }).then(function (token) {
+      document.getElementById('g-recaptcha-response').value = token;
+    });
+  });
+</script>
+<!--Formulario-->
+<section class="contact">
+  <div class="container">
+    <h2>Contacto</h2>
+    <h5>Siéntete libre de contactarnos</h5>
+    <hr>
+    <div class="row col-lg-12 info">
+      <div class="col-lg-6">
+        {% load static %}
+        <p><img src="{% static 'core/img/call.png' %}" width="20px" alt=""> +34 660 40 28 52</p>
+      </div>
+      <div class="col-lg-6">
+        {% load static %}
+        <p><img src="{% static 'core/img/envelope.png'  %}" width="20px" alt=""> info@naecoer.com</p>
+
+      </div>
+    </div>
+    <div class="contact-form">
+      <form action="/" method="POST">{% csrf_token %}
+        <div class="row col-lg-12">
+          <div class="col-lg-6">
+            <label for="name" class="label-input50">Nombre *</label>
+            <input type="text" name="name" id="" class="input50" required placeholder="Nombre y apellidos">
+          </div>
+
+          <div class="col-lg-6">
+            <label for="number" class="label-input50">Número de teléfono *</label>
+            <input type="number" name="phone" id="" class="input50" required placeholder="Ej: +34 600 00 00 00">
+          </div>
+        </div>
+
+        <div class="row col-lg-12">
+          <div class="col-lg-12">
+            <label for="email" class="label-input100">Correo electrónico *</label>
+            <input type="email" name="email" id="" class="input100" required placeholder="Ej: example@email.com">
+          </div>
+        </div>
+
+        <div class="row col-lg-12">
+          <div class="col-lg-12">
+            <label for="subject" class="label-input100">Asunto *</label>
+            <input type="text" name="subject" id="" class="input100" required>
+          </div>
+        </div>
+
+        <div class="row col-lg-12">
+          <div class="col-lg-12">
+            <label for="message" class="label-textarea">Mensaje *</label>
+            <textarea name="message" id="" cols="20" rows="10" class="textarea" required
+              placeholder="Deja aquí tu mensaje..."></textarea>
+          </div>
+        </div>
+
+        <div class="row col-lg-12">
+          <div class="col-lg-12">
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+            <input type="submit" value="ENVIAR" style="text-align: center;">
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!--Termina Formulario-->
+
+{% load static %}
+<script type="text/javascript" src="{% static 'core/js/particles.js' %}"></script>
+{% load static %}
+<script type="text/javascript" src="{% static 'core/js/app.js' %}"></script>
+
+{% endblock %}

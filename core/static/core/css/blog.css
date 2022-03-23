@@ -1,0 +1,97 @@
+.blog-head
+{
+    background-image: url(/static/core/img/fondo-pag-blog.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    padding-top: 140px;
+}
+
+.post-head
+{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    padding-top: 140px;
+}
+
+.blog-head .titulo
+{
+    margin: 0px auto;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.blog-head h2
+{
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+
+    padding: 40px 0px;
+}
+
+#entradas .news
+{
+    background-image: none !important;
+}
+
+.news .subtitulo h2
+{
+    text-align: center;
+    font-size: 3rem;
+}
+
+#entradas .news .card-body
+{
+    background-color: rgba(20, 39, 174, 1);
+    color: white;
+}
+
+#entradas .news .card-body .btn-primary
+{
+    background-color: white !important;
+    color: rgba(20, 39, 174, 1);
+}
+
+#entradas .news 
+{
+    padding-bottom: 100px;
+}
+
+.blog .blog-entero h2
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #03a9f4;
+}
+
+.btn-leer-mas .btn
+{
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: normal;
+    margin: 0;
+    margin-top: 10px;
+    padding: 17px 30px;
+    border-radius: 30px;
+    border-color: #03a9f4;
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+
+@media (max-width: 511px)
+{
+    .news .card img
+    {
+        height: 350px;
+    }
+}
